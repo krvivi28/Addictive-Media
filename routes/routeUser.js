@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage,
   limits: {
-    fileSize: 1024 * 1024 * 15,
+    fileSize: 1024 * 1024 * 5,
   },
 });
 
@@ -59,7 +59,7 @@ router.get("/delete/:id", async (req, res) => {
   try {
     var id=req.params.id.slice(1);
     var del = await Register.deleteOne({_id:id});
-   res.redirect("/");
+   res.redirect("/listpage");
   } catch (error) {
     res.send("some error occured");
   }
