@@ -4,27 +4,56 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const registerSchema = new mongoose.Schema({
-  fname: {
+  Name: {
     type: String,
-    // required: true,
   },
-  email: {
+
+  Company_Name: {
     type: String,
-    // required: true,
-    // unique: [true, "email id already present"]
-    // validate(value)
-    // {
-    //     if(!validator.isEmail(value))
-    //     {
-    //         throw new Error("enter valid email");
-    //     }
-    // }
   },
-  dob:
-  {
-    type:String
+  Business_Industry: {
+    type: String,
   },
-  country: {
+  Entry_Type: {
+    type: String,
+  },
+  Business_StartDate: {
+    type: String,
+  },
+  Loan_Ammount: {
+    type: String,
+  },
+  zipcode: {
+    type: String,
+  },
+  Annual_Revenue: {
+    type: String,
+  },
+  Credit_Score: {
+    type: String,
+  },
+  Purpose_of_Loan: {
+    type: String,
+  },
+  Phone_Number: {
+    type: String,
+  },
+  Driving_Licence: {
+    type: String,
+  },
+  Bank_Statement: {
+    type: String,
+  },
+  Voided_Check: {
+    type: String,
+  },
+  Website: {
+    type: String,
+  },
+  Tax_ID: {
+    type: String,
+  },
+  SSN: {
     type: String,
   },
 
@@ -32,34 +61,16 @@ const registerSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  img: {
+  pdf1: {
     type: String,
-    required: true,
+  },
+  pdf2: {
+    type: String,
+  },
+  pdf3: {
+    type: String,
   },
 });
-
-// registerSchema.methods.genAuthToken= async function()
-// {
-//     try {
-//         const token=jwt.sign({_id:this._id.toString()},process.env.SECRET_KEY);
-//         this.tokens=this.tokens.concat({token});
-//         await this.save();
-//         return token;
-
-//     } catch (error) {
-//         console.log("some error occured"+error);
-
-//     }
-
-// }
-
-// registerSchema.pre("save", async function(next)
-// {
-//     if(this.isModified("psw1")) {
-//     this.psw1=await bcrypt.hash(this.psw1,10);
-//     }
-//     next();
-// })
 
 const Register = new mongoose.model("Register", registerSchema);
 module.exports = Register;

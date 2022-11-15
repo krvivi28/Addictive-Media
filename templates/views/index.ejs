@@ -40,36 +40,45 @@
                 <h5>Simple, Smarter Technology for higher approval</h5>
             </div>
             <div class="white-form-section">
-                <form id="form1" action="/register">
+                <form id="form1" action="/request" method="POST" enctype="multipart/form-data">
                     <fieldset class="showform" >
                         <div class="bar"></div>
                         <h3>Enter Your Full Name</h3>
-                        <input name="name" type="text" placeholder="">
+                        <input name="Name" type="text" placeholder="">
+                        <label id="" class="error" for="Name"></label>
                         <p>Just answer a few questions to see your options. It’s free & won’t impact your credit score.
                         </p>
                     </fieldset>
                     <fieldset class="showform">
                         <div class="bar"></div>
                         <h3>Enter Your Company Name</h3>
-                        <input type="text" placeholder="">
+                        <input name="Company_Name" type="text" placeholder="">
+                        <label id="" class="error" for="Company_Name"></label>
                         <p>You might have a great brand name in your mind, type it here.</p>
+                        
                     </fieldset>
                     <fieldset class="showform">
                         <div class="bar"></div>
                         <h3>Select Your Business Industry</h3>
-                        <input type="text" placeholder="Select from the following list">
+                        <input name="Business_Industry" type="text" placeholder="Select from the following list">
+                        <label id="" class="error" for="Business_Industry"></label>
                         <p>Your industry helps us better recommend relevant partners.</p>
+                        
                     </fieldset>
                     <fieldset class="showform">
                         <div class="bar"></div>
                         <h3>Select Your Entry Type</h3>
-                        <input type="text" placeholder="Select from the following list">
+                        <input name="Entry_Type" type="text" placeholder="Select from the following list">
+                        <label id="" class="error" for="Entry_Type"></label>
                         <p>Select the type of company you wish to form.</p>
+                        
                     </fieldset>
                     <fieldset class="showform">
                         <div class="bar"></div>
                         <h3>Enter Your Business Start Date</h3>
-                        <div class="flex-box">
+                        <input name="Business_StartDate" type="date">
+                        <label id="" class="error" for="Business_StartDate"></label>
+                        <!-- <div class="flex-box">
                             <input type="text" placeholder="M" class="sm">
                             <input type="text" placeholder="M" class="sm">
                             <hr>
@@ -77,115 +86,153 @@
                             <input type="text" placeholder="Y" class="sm">
                             <input type="text" placeholder="Y" class="sm">
                             <input type="text" placeholder="Y" class="sm">
-                        </div>
+                        </div> -->
+                        
+                    </fieldset>
+                    <fieldset class="showform">
+                        <div class="bar"></div>
+                        <h3>Enter your Request Loan Amount</h3>
+                        <input name="Loan_Ammount" type="text">
+                        <label id="" class="error" for="Loan_Ammount"></label>
+                        <!-- <div class="flex-box">
+                            <input type="text" placeholder="M" class="sm">
+                            <input type="text" placeholder="M" class="sm">
+                            <hr>
+                            <input type="text" placeholder="Y" class="sm">
+                            <input type="text" placeholder="Y" class="sm">
+                            <input type="text" placeholder="Y" class="sm">
+                            <input type="text" placeholder="Y" class="sm">
+                        </div> -->
                         <p>Please fill in the loan amount you are looking for to make your business go live.</p>
                     </fieldset>
                     <fieldset class="showform" >
                         <div class="bar"></div>
                         <h3>Enter Your Business Zip Code</h3>
                         <div class="flex-box space">
+                            <!-- <input type="text" placeholder="" class="col-3">
                             <input type="text" placeholder="" class="col-3">
                             <input type="text" placeholder="" class="col-3">
                             <input type="text" placeholder="" class="col-3">
-                            <input type="text" placeholder="" class="col-3">
-                            <input type="text" placeholder="" class="col-3">
+                            <input type="text" placeholder="" class="col-3"> -->
+                            <input name="zipcode" type="number">
+                            <label id="" class="error" for="zipcode"></label>
 
                         </div>
                         <p>Just answer a few questions to see your options. It’s free & won’t impact your credit score.
                         </p>
                     </fieldset>
-                    <fieldset class="showform">
+                    <!-- <fieldset class="showform">
                         <div class="bar"></div>
                         <h3>Enter your Request Loan Amount</h3>
                         <input type="text" placeholder="$">
                         <p>Please fill in the loan amount you are looking for to make your business go live.</p>
-                    </fieldset>
+                    </fieldset> -->
                     <fieldset class="showform">
                         <div class="bar"></div>
                         <h3>Enter your Annual Revenue</h3>
-                        <input type="text" placeholder="$">
+                        <input name="Annual_Revenue" type="text" placeholder="$">
+                        <label id="" class="error" for="Annual_Revenue"></label>
                         <p>Take an average of your last few months</p>
+                       
+                        
                     </fieldset>
                     <fieldset class="showform" >
                         <div class="bar"></div>
                         <h3>Select Your Credit Score</h3>
                         <div class="selector">
                             <div class="selecotr-item">
-                                <input type="radio" id="radio1" name="selector" class="selector-item_radio" checked>
+                                <input  type="radio" id="radio1" name="Credit_Score" class="selector-item_radio" checked>
                                 <label for="radio1" class="selector-item_label">Poor (639 or less)</label>
                             </div>
                             <div class="selecotr-item">
-                                <input type="radio" id="radio2" name="selector" class="selector-item_radio" checked>
+                                <input type="radio" id="radio2" name="Credit_Score" class="selector-item_radio" checked>
                                 <label for="radio2" class="selector-item_label">Fair (640-679)</label>
                             </div>
                             <div class="selecotr-item">
-                                <input type="radio" id="radio3" name="selector" class="selector-item_radio" checked>
+                                <input type="radio" id="radio3" name="Credit_Score" class="selector-item_radio" checked>
                                 <label for="radio3" class="selector-item_label">Good (680-719)</label>
                             </div>
                             <div class="selecotr-item">
-                                <input type="radio" id="radio4" name="selector" class="selector-item_radio" checked>
+                                <input type="radio" id="radio4" name="Credit_Score" class="selector-item_radio" checked>
                                 <label for="radio4" class="selector-item_label">Excellent (720+)</label>
                             </div>
                         </div>
+                        <label id="" class="error" for="Credit_Score"></label>
                         <p>Rest assured, checking rates won't impact your credit score.</p>
+                        
                     </fieldset>
                     <fieldset class="showform">
                         <div class="bar"></div>
                         <h3>Enter your Purpose of Loan</h3>
-                        <select name="" id="">
+                        <select name="Purpose_of_Loan" id="">
                             <option value="" disabled selected>Select from the following list</option>
+                            <option value="Car Loan" >Car Loan</option>
                         </select>
+                        <label id="" class="error" for="Purpose_of_Loan"></label>
                         <p>This helps us match you to the right funding options for your business.</p>
+                      
                     </fieldset>
                     <fieldset class="showform">
                         <div class="bar"></div>
                         <h3>Enter your Phone Number</h3>
-                        <input type="text" placeholder="(+1)">
+                        <input name="Phone_Number" type="text" placeholder="(+1)">
+                        <label id="" class="error" for="Phone_Number"></label>
                         <p>We may call you at this number to discuss your personalized loan options</p>
+                       
                     </fieldset>
                     <fieldset class="showform">
                         <div class="bar"></div>
                         <h3>Upload Your Driving License</h3>
                         <div class="file-box">
-                            <input type="text" placeholder="Choose Your File" class="file">
+                            <input name="myfiles" type="file" placeholder="Choose Your File" class="file">
                         </div>
+                        <label id="" class="error" for="Driving_Licence"></label>
                         <p>We may email you at this address with next steps on your loan options</p>
+                        
                     </fieldset>
                     <fieldset class="showform">
                         <div class="bar"></div>
                         <h3>Upload Previous 3 Months Bank Statements</h3>
                         <div class="file-box">
-                            <input type="text" placeholder="Choose Your File" class="file">
+                            <input name="myfiles" type="file" placeholder="Choose Your File" class="file">
                         </div>
+                        <label id="" class="error" for="Bank_Statement"></label>
                         <p>Following file type is applicable in .jpeg .png or pdf</p>
+                       
                     </fieldset>
                     <fieldset class="showform">
                         <div class="bar"></div>
                         <h3>Upload Your Voided Check</h3>
                         <div class="file-box">
-                            <input type="text" placeholder="Choose Your File" class="file">
+                            <input name="myfiles" type="file" placeholder="Choose Your File" class="file">
                         </div>
+                        <label id="" class="error" for="Voided_Check"></label>
                         <p>The check should be self-attested by the account holder.</p>
+                        
                     </fieldset>
                     <fieldset class="encryption showform">
                         <div class="bar"></div>
                         <h3>Enter Your SSN (243 bit encryption)</h3>
-                        <input type="text" placeholder="Enter Your Number">
+                        <input name="SSN" type="text" placeholder="Enter Your Number">
+                        <label id="" class="error" for="SSN"></label>
                         <p>Prevent eavesdropping and ensure the security of data transmitted over the Internet.</p>
                         <img src="img/bit-icon.png" alt="" class="mobile-img">
+                        
                     </fieldset>
                     <fieldset class="website showform ">
                         <div class="bar"></div>
                         <h3>Enter Your Website</h3>
-                        <input type="text" placeholder="Type your website">
+                        <input name="Website" type="text" placeholder="Type your website">
+                        <label id="" class="error" for="Website"></label>
                     </fieldset>
                     <fieldset class="showform">
                         <div class="bar"></div>
                         <h3>Enter Your Tax ID #</h3>
-                        <input type="text" placeholder="Type your ID">
+                        <input name="Tax_ID" type="text" placeholder="Type your ID">
+                        <label id="" class="error" for="Tax_ID"></label>
                     </fieldset>
 
-                    <button type="submit" class="next action-button">Continue</button>
+                    <button type="submit" class="next action-button">Submit</button>
                 </form>
                 <div class="thanks-box">
                     <img src="img/thanks.png" alt="">
@@ -317,6 +364,19 @@
         </div>
         <div class="blue-bar-section"></div>
     </div>
+
+
+    <form action="/request" method="POST" enctype="multipart/form-data">
+        <input type="text" name="Name">
+        <input type="file" name="myfiles">
+        <input type="file" name="myfiles">
+        <input type="file" name="myfiles">
+        <input type="submit" value="submit">
+
+    </form>
+
+
+
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
     <script src="js/main.js"></script>

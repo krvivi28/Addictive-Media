@@ -19,17 +19,8 @@ const upload = multer({
   },
 });
 
-// Get request to go to home page
-// router.get("/", (req, res) => {
-//   var udata = Register.find({});
-//   udata.exec(function (err, data) {
-//     if (err) throw err;
-//     // res.render("test");
-//     res.render("test", { records: data });
-//   });
-// });
 router.get("/listpage", (req, res) => {
-  var udata = Register.find({}).sort({"fname":1});
+  var udata = Register.find({}).sort({ fname: 1 });
   udata.exec(function (err, data) {
     if (err) throw err;
     // res.render("test");
@@ -37,29 +28,25 @@ router.get("/listpage", (req, res) => {
   });
 });
 router.get("/sbn", async (req, res) => {
-  var udata = await Register.find({}).sort({"fname":1});
+  var udata = await Register.find({}).sort({ fname: 1 });
   // res.send(udata);
   res.render("listpage", { records: udata });
 });
 router.get("/sbd", async (req, res) => {
-  var udata = await Register.find({}).sort({"date":1});
+  var udata = await Register.find({}).sort({ date: 1 });
   // res.send(udata);
   res.render("listpage", { records: udata });
 });
-// router.get("/delete/:id", function (req, res) {
-//   var del=Register.findByIdandRemove(req.params.id);
-//   console.log(req.params.id);
-//  del.exec(function (err) {
-//     if (err) throw err;
-//     // res.render("test");
-//     res.redirect("/");
-//   });
-// });
+router.get("/success", async (req, res) => {
+ 
+  res.render("success");
+});
+
 router.get("/delete/:id", async (req, res) => {
   try {
-    var id=req.params.id.slice(1);
-    var del = await Register.deleteOne({_id:id});
-   res.redirect("/listpage");
+    var id = req.params.id.slice(1);
+    var del = await Register.deleteOne({ _id: id });
+    res.redirect("/listpage");
   } catch (error) {
     res.send("some error occured");
   }
@@ -90,6 +77,43 @@ router.post("/", upload.single("avatar"), function (req, res) {
 
   // res.status(200).render("test", { name: reguser.fname,email:reguser.email,dob:reguser.dob.Date,country:reguser.country, pdf: reguser.img });
   // alert("you have successfully registered for srisriport!!  login to continue");
+});
+router.post("/request", upload.array("myfiles", 3), async (req, res) => {
+  try {
+    // var email = req.body.email;
+    var imgs = req.files;
+    var arr = [];
+    imgs.forEach((element) => {
+      arr.push(element.filename);
+      // console.log(element.filename);
+    });
+  
+    const userData = await new Register({
+      Name: req.body.Name,
+      Company_Name: req.body.Company_Name,
+      Business_Industry: req.body.Business_Industry,
+      Entry_Type: req.body.Entry_Type,
+      Business_StartDate: req.body.Business_StartDate,
+      Loan_Ammount: req.body.Loan_Ammount,
+      zipcode: req.body.zipcode,
+      Annual_Revenue: req.body.Annual_Revenue,
+      Credit_Score: req.body.Credit_Score,
+      Purpose_of_Loan: req.body.Purpose_of_Loan,
+      Phone_Number: req.body.Phone_Number,
+      Driving_Licence: arr[0],
+      Bank_Statement: arr[1],
+      Voided_Check: arr[2],
+      Website: req.body.Website,
+      Tax_ID: req.body.Tax_ID,
+      SSN: req.body.SSN,
+    });
+
+    const data = await userData.save();
+    res.status(200).render("success");
+    // res.status(200).send(data);
+  } catch (err) {
+    res.status(401).send("upload failed !! try again by filling all details");
+  }
 });
 
 module.exports = router;

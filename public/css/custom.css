@@ -17,6 +17,12 @@ a {
     transition: .2s ease-in-out;
 
 }
+.error 
+{
+    color: red;
+    width: 100%;
+  
+}
 
 .btn-light-blue {
 
