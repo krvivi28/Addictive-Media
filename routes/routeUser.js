@@ -20,14 +20,14 @@ const upload = multer({
 });
 
 // Get request to go to home page
-router.get("/", (req, res) => {
-  var udata = Register.find({});
-  udata.exec(function (err, data) {
-    if (err) throw err;
-    // res.render("test");
-    res.render("test", { records: data });
-  });
-});
+// router.get("/", (req, res) => {
+//   var udata = Register.find({});
+//   udata.exec(function (err, data) {
+//     if (err) throw err;
+//     // res.render("test");
+//     res.render("test", { records: data });
+//   });
+// });
 router.get("/listpage", (req, res) => {
   var udata = Register.find({}).sort({"fname":1});
   udata.exec(function (err, data) {
