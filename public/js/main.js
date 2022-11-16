@@ -15,7 +15,6 @@ $('#form1').validate({
     Driving_Licence:"required",
     Bank_Statement:"required",
     Voided_Check:"required",
-    Website:"required",
     Tax_ID:"required",
     SSN:"required",
 
@@ -23,6 +22,20 @@ $('#form1').validate({
   {
     Name:"Please enter as First name Last name",
     Company_Name:"Please enter your company name",
+    Business_Industry:"required",
+    Entry_Type:"Please select your entity type",
+    Business_StartDate:"Please enter your business start date",
+    Loan_Ammount:"Please enter the requested loan amount",
+    zipcode:"Please enter your zip code ",
+    Annual_Revenue:"Please enter an amount for your annual revenue",
+    Credit_Score:"",
+    Purpose_of_Loan:"required",
+    Phone_Number:"Please enter your Phone Number",
+    Driving_Licence:"Kindly upload your drivers license",
+    Bank_Statement:"Kindly upload previous 3 months bank statements",
+    Voided_Check:"Kindly upload your voided check",
+    Tax_ID:"required",
+    SSN:"Please enter your SSN.",
   },
   submitHandler:function(form)
   {
